@@ -1,0 +1,144 @@
+<p>inmates works!</p>
+<p>component-inmates works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmate Records - Prison Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #2c3e50;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #34495e;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        nav a:hover {
+            background-color: #2980b9;
+            border-radius: 5px;
+        }
+        .container {
+            padding: 30px;
+            margin: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-size: 16px;
+            color: #333;
+        }
+        input[type="text"], input[type="date"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        textarea {
+            height: 100px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Prison Management System</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Inmate Records</a>
+        <a href="#">Visitor Management</a>
+        <a href="#">Staff Portal</a>
+        <a href="#">Reports</a>
+        <a href="#">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h2>Inmate Records</h2>
+        <form action="/submit-inmate-record" method="POST">
+            <div class="form-group">
+                <label for="inmateID">Inmate ID</label>
+                <input type="text" id="inmateID" name="inmateID" placeholder="Enter Inmate ID" required>
+            </div>
+            <div class="form-group">
+                <label for="inmateName">Full Name</label>
+                <input type="text" id="inmateName" name="inmateName" placeholder="Enter Inmate Name" required>
+            </div>
+            <div class="form-group">
+                <label for="dateOfBirth">Date of Birth</label>
+                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+            </div>
+            <div class="form-group">
+                <label for="crime">Crime Committed</label>
+                <textarea id="crime" name="crime" placeholder="Describe the crime committed" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="sentenceDuration">Sentence Duration</label>
+                <input type="text" id="sentenceDuration" name="sentenceDuration" placeholder="e.g., 5 years, 10 years" required>
+            </div>
+            <div class="form-group">
+                <label for="admissionDate">Admission Date</label>
+                <input type="date" id="admissionDate" name="admissionDate" required>
+            </div>
+            <div class="form-group">
+                <label for="behavior">Behavior Record</label>
+                <textarea id="behavior" name="behavior" placeholder="Enter any behavior notes or infractions"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="status">Current Status</label>
+                <select id="status" name="status">
+                    <option value="incarcerated">Incarcerated</option>
+                    <option value="released">Released</option>
+                    <option value="transferred">Transferred</option>
+                </select>
+            </div>
+            <button type="submit">Save Record</button>
+        </form>
+    </div>
+
+</body>
+</html>

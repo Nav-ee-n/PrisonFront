@@ -1,0 +1,148 @@
+<p>user-profile works!</p>
+<p>user-profile works!</p>
+<div class="profile-container">
+    <header>
+      <h1>My Profile</h1>
+      <p>Manage your personal information</p>
+    </header>
+    <style>
+        .profile-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+header h1 {
+  text-align: center;
+  color: #4c78af;
+}
+
+header p {
+  text-align: center;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group button {
+  width: 48%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #4c78af;
+  color: white;
+  margin-right: 4%;
+}
+
+.btn-secondary {
+  background-color: #ccc;
+  color: #333;
+}
+
+.btn-primary:disabled {
+  background-color: #aaa;
+}
+
+.form-group button:hover {
+  opacity: 0.9;
+}
+
+    </style>
+  
+    <form (ngSubmit)="onSubmit()" #profileForm="ngForm" class="profile-form">
+      
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          [(ngModel)]="user.name" 
+          required 
+          placeholder="Enter your full name" 
+          class="form-control"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          [(ngModel)]="user.email" 
+          required 
+          placeholder="Enter your email" 
+          class="form-control"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input 
+          type="tel" 
+          id="phone" 
+          name="phone" 
+          [(ngModel)]="user.phone" 
+          required 
+          placeholder="Enter your phone number" 
+          class="form-control"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea 
+          id="address" 
+          name="address" 
+          [(ngModel)]="user.address" 
+          placeholder="Enter your address" 
+          class="form-control"
+        ></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          [(ngModel)]="user.password" 
+          required 
+          placeholder="Enter a new password" 
+          class="form-control"
+        />
+      </div>
+  
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" [disabled]="!profileForm.form.valid">Update Profile</button>
+        <button type="reset" class="btn btn-secondary">Reset</button>
+      </div>
+    </form>
+  </div>
